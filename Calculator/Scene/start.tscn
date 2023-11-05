@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw8qn1y4n47h8"]
+
+[ext_resource type="Script" path="res://Scene/Script/start.cs" id="1_f8o1y"]
+[ext_resource type="Script" path="res://Scene/Clcl.cs" id="2_ht2uo"]
+
+[sub_resource type="Theme" id="Theme_43bl6"]
+
+[sub_resource type="Theme" id="Theme_qcxcb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i75k5"]
+
+[node name="Start" type="Node2D"]
+script = ExtResource("1_f8o1y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 1153.0
+offset_bottom = 651.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Clcl" type="Button" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_43bl6")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.741176, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.568627, 0, 1)
+text = "Calculate"
+script = ExtResource("2_ht2uo")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Opt" type="Button" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_qcxcb")
+theme_override_colors/font_color = Color(0.862745, 0.886275, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.784314, 0.721569, 0, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.662745, 0, 1)
+text = "Options"
+icon = SubResource("CanvasTexture_i75k5")
+
+[node name="fone" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+color = Color(0.215686, 0.494118, 0.494118, 1)
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Clcl" to="VBoxContainer/MarginContainer/Clcl" method="_on_pressed"]
